@@ -1,15 +1,16 @@
+require('pry')
 require_relative('../db/sql_runner.rb')
 
 class League
 
-  attr_reader :first_name, :surname, :runner_faction, :runner_identity, :corp_faction, :corp_identity, :league_id
+  attr_accessor :name, :start_date, :end_date, :max_players
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @start_date = options['start_date']
     @end_date = options['end_date']
-    @max_players = options['max_players']
+    @max_players = options['max_players'].to_i
   end
 
   def save

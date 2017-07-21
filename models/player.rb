@@ -2,12 +2,15 @@ require_relative('../db/sql_runner.rb')
 
 class Player
 
-  attr_reader :first_name, :surname, :runner_faction, :runner_identity, :corp_faction, :corp_identity, :league_id
+  attr_reader :league_id
+
+  attr_accessor :first_name, :surname, :runner_faction, :runner_identity, :corp_faction, :corp_identity
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @surname = options['second_name']
+    @tag = options['tag']
     @runner_faction = options['runner_faction']
     @runner_identity = options['runner_identity']
     @corp_faction = options['corp_faction']
@@ -19,7 +22,8 @@ class Player
     sql = "INSERT INTO players
     (
     first_name, 
-    surname, 
+    surname,
+    tag 
     runner_faction, 
     runner_identity, 
     corp_faction, 
@@ -28,10 +32,10 @@ class Player
     )
     VALUES
     (
-    $1, $2, $3, $4, $5, $6
+    $1, $2, $3, $4, $5, $6 $7
     )
     RETURNING id"
-    values = [@first_name, @surname, @runner_faction, @runner_identity, @corp_faction, @corp_identity, @league_id]
+    values = [@first_name, @surname, @tag, @runner_faction, @runner_identity, @corp_faction, @corp_identity, @league_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
