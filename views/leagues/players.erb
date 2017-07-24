@@ -1,0 +1,12 @@
+<h2>Leagues & Players</h2>
+<hr />
+<% @leagues.each do |league| %>
+  <p>Name: <%= league.name %></p>
+  <p>Start Date:  <%= league.start_date %></p>
+  <p>End Date:  <%= league.end_date %>
+  <p>Maximum Players: <%= league.max_players %></p>
+  <p>Current Players: <%= league.players %></p>
+    <hr />
+    <% end %>
+
+

@@ -36,6 +36,22 @@ class League
     @id = result['id']
   end
 
+  def players
+    current_players = []  
+    sql = "SElECT players.tag FROM players INNER JOIN leagues ON players.league_id = leagues.id WHERE players.league_id = '#{@id}'"
+    players = SqlRunner.run(sql)
+    results = players.map {|player| Player.new(player)}
+    results.each {|player| current_players.push(player.tag)}
+    return current_players
+  end
+
+  def self.players
+    sql = "SELECT * FROM leagues"
+    leagues = SqlRunner.run(sql)
+    result = leagues.map {|league| League.new(league)}
+    result.each {|league| league.players}
+  end
+
   def self.find(id)
     sql = "SELECT * FROM leagues WHERE id=#{id};"
     league = SqlRunner.run(sql)

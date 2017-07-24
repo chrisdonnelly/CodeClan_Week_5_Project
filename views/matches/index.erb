@@ -1,0 +1,27 @@
+<h2>Match Records</h2>
+<hr />
+<% @matches.each do |match| %>
+  <p>Round 1 Runner Player: <%= match.round1_runner_player_id %></p>
+  <p>Round 1 Runner Faction:  <%= match. round1_runner_faction %></p>
+  <p>Round 1 Runner Identity:  <%= match.round1_runner_identity %></p>
+  <p>Round 1 Corp Player: <%= match.round1_corp_faction, %></p>
+  <p>Round 1 Corp Faction: <%= match.runner_identity %></p>
+  <p>Corp Faction: <%= player.corp_faction %></p>
+  <p>Corp Identity: <%= player.corp_identity %></p>
+  <p>League ID : <%= player.league_id %></p>
+    <hr />
+    <% end %>
+
+   
+
+  
+    round1_corp_faction, 
+    round1_corp_identity,
+    round1_winner_id, 
+    round2_runner_player_id, 
+    round2_runner_faction,
+    round2_runner_identity, 
+    round2_corp_player_id, 
+    round2_corp_faction, 
+    round2_corp_identity, 
+    round2_winner_id, 

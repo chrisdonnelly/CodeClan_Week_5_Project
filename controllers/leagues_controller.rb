@@ -16,3 +16,8 @@ post '/leagues' do
   new_league.save
   redirect to '/leagues'
 end
+
+get '/leagues/players' do
+  @leagues = League.find_all
+  erb(:"leagues/players")
+end
