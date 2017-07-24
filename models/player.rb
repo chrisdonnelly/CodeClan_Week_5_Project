@@ -3,7 +3,7 @@ require_relative('../db/sql_runner.rb')
 
 class Player
 
-  attr_reader :league_id
+  attr_reader :id, :league_id
 
   attr_accessor :first_name, :surname, :tag, :runner_faction, :runner_identity, :corp_faction, :corp_identity
 
@@ -59,7 +59,7 @@ def update()
     runner_identity = '#{runner_identity}',
     corp_faction = '#{corp_faction}',
     corp_identity = '#{corp_identity}',
-    league_id = '#{league_id}',
+    league_id = '#{league_id}'
     WHERE id = '#{ @id }';"
   SqlRunner.run( sql )
 end

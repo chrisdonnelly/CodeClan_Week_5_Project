@@ -1,0 +1,79 @@
+<h1>Please edit this Player</h1>
+
+<p>First Name: <%= @player.first_name %></p>
+<p>Surname: <%= @player.surname %></p>
+<p>Tag: <%= @player.tag %></p>
+<p>Runner Faction: <%= @player.runner_faction %></p>
+<p>Runner Identity: <%= @player.runner_identity%></p>
+<p>Corp Faction: <%= @player.corp_faction%></p>
+<p>Corp Identity: <%= @player.corp_identity%></p>
+<p>League id: <%= @player.league_id%></p>
+
+<form method="post" action="/players/update/<%= @player.id %>"
+
+  <label for="first-name-field">First Name:</label>
+  <input
+  type="text"
+  name="first_name" 
+  id="first-name-field"
+  value="<%= @player.first_name %>"
+  />
+
+  <label for="surname-field">Surname:</label>
+  <input
+  type="text"
+  name="surname" 
+  id="surname-field"
+  value="<%= @player.surname %>"
+  />
+
+  <label for="tag-field">Tag:</label>
+  <input
+  type="text"
+  name="tag" 
+  id="tag-field"
+  value="<%= @player.tag %>"
+  />
+
+  <label for="runner-faction-field">Runner Faction:</label>
+  <input
+  type="text"
+  name="runner_faction" 
+  id="runner-faction-field"
+  value="<%= @player.runner_faction %>"
+  
+  <label for="runner-identity-field">Runner Identity:</label>
+  <input
+  type="text"
+  name="runner_identity" 
+  id="runner-identity-field"
+  value="<%= @player.runner_identity %>"
+  />
+
+  <label for="corp-faction-field">Corp Faction:</label>
+  <input
+  type="text"
+  name="corp_faction" 
+  id="corp-faction-field"
+  value="<%= @player.corp_faction %>"
+  />
+
+  <label for="corp-identity-field">Corp Identity:</label>
+  <input
+  type="text"
+  name="corp_identity" 
+  id="corp-identity-field"
+  value="<%= @player.corp_identity %>"
+  />
+
+  <label for="league-field">League:</label>
+  <select
+  name="league_id" 
+  id="league-field">
+    <% @leagues.each do |league| %>          
+      <option value=<%=league.id%>><%=league.name%></option>
+        <%end%>
+    </select>
+  
+    <input type="submit" value="Jack-in to the Grid">
+</form>
