@@ -6,11 +6,12 @@ get '/games' do
     erb(:"games/index")
 end
 
-# get '/players/new' do
-#   @leagues = League.find_all
-#   @player = Player.new(params)
-#   erb(:"players/new")
-# end
+get '/games/new' do
+  @leagues = League.find_all
+  @players = Player.find_all
+  @game = Game.new(params)
+  erb(:"gamnes/new")
+end
 
 # post '/players' do
 #   new_player = Player.new(params)

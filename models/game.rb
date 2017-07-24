@@ -7,6 +7,7 @@ class Game
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
+    @league_id = options['id'].to_i
     @round1_runner_player_id = options['round1_runner_player'].to_i
     @round1_runner_faction = options['round1_runner_faction']
     @round1_runner_identity = options['round1_runner_identity']
@@ -26,6 +27,7 @@ class Game
   def save
     sql = "INSERT INTO games 
     (
+    league_id,
     round1_runner_player_id,
     round1_runner_faction, 
     round1_runner_identity, 
@@ -43,6 +45,7 @@ class Game
     )
     VALUES
     (
+    '#{@league_id},'
     '#{@round1_runner_player_id}',
     '#{@round1_runner_faction}',
     '#{@round1_runner_identity}',

@@ -1,6 +1,60 @@
 require'pg'
 require_relative'../models/player.rb'
 require_relative'../models/league.rb'
+require_relative'../models/game.rb'
+require_relative'../models/corp.rb'
+require_relative'../models/runner.rb'
+
+runner1 = Runner.new('faction' => 'Shaper', 'name' => 'Ayla "Bios" Rahim: Simulant Specialist')
+runner1.save
+runner2 = Runner.new('faction' => 'Shaper', 'name' => 'Chaos Theory: Wünderkind')
+runner2.save
+runner3 = Runner.new('faction' => 'Shaper', 'name' => 'Ele "Smoke" Scovak: Cynosure of the Net')
+runner3.save
+runner4 = Runner.new('faction' => 'Shaper', 'name' => 'Exile: Streethawk')
+runner4.save
+runner5 = Runner.new('faction' => 'Shaper', 'name' => 'Hayley Kaplan: Universal Scholar')
+runner5.save
+runner6 = Runner.new('faction' => 'Shaper', 'name' => 'Jamie "Bzzz" Micken: Techno Savant')
+runner6.save
+runner7 = Runner.new('faction' => 'Shaper', 'name' => 'Jesminder Sareen: Girl Behind the Curtain')
+runner7.save
+runner8 = Runner.new('faction' => 'Shaper', 'name' => 'Kate "Mac" McCaffrey: Digital Tinker')
+runner8.save
+runner9 = Runner.new('faction' => 'Shaper', 'name' => 'Nasir Meidan: Cyber Explorer')
+runner9.save
+runner10 = Runner.new('faction' => 'Shaper', 'name' => 'Rielle "Kit" Peddler: Transhuman')
+runner10.save
+runner11 = Runner.new('faction' => 'Shaper', 'name' => 'The Professor: Keeper of Knowledge')
+runner11.save
+
+runner12 = Runner.new('faction' => 'Criminal', 'name' => 'Andromeda: Dispossessed Ristie')
+runner12.save
+runner13 = Runner.new('faction' => 'Criminal', 'name' => 'Armand "Geist" Walker: Tech Lord')
+runner13.save
+runner14 = Runner.new('faction' => 'Criminal', 'name' => 'Boris "Syfr" Kovac: Crafty Veteran')
+runner14.save
+runner15 = Runner.new('faction' => 'Criminal', 'name' => 'Gabriel Santiago: Consummate Professional')
+runner15.save
+runner16 = Runner.new('faction' => 'Criminal', 'name' => 'Iain Stirling: Retired Spook')
+runner16.save
+runner17 = Runner.new('faction' => 'Criminal', 'name' => 'Ken "Express" Tenma: Disappeared Clone')
+runner17.save
+runner18 = Runner.new('faction' => 'Criminal', 'name' => 'Khan: Savvy Skiptracer')
+runner18.save
+runner19 = Runner.new('faction' => 'Criminal', 'name' => 'Laramy Fisk: Savvy Investor')
+runner19.save
+runner20 = Runner.new('faction' => 'Criminal', 'name' => 'Leela Patel: Trained Pragmatist')
+runner20.save
+runner21 = Runner.new('faction' => 'Criminal', 'name' => 'Los: Data Hijacker')
+runner21.save
+runner22 = Runner.new('faction' => 'Criminal', 'name' => 'Nero Severn: Information Broker')
+runner22.save
+runner23 = Runner.new('faction' => 'Criminal', 'name' => 'Silhouette: Stealth Operative')
+runner23.save
+runner24 = Runner.new('faction' => 'Criminal', 'name' => 'Steve Cambridge: Master Grifter')
+runner24.save
+
 
 league1 = League.new('name' => 'League 1', 'start_date' => '29-07-17', 'end_date' => '05-08-17', 'max_players' => '6')
 league1.save

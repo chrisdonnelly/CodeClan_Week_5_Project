@@ -1,0 +1,80 @@
+
+<form method="post" action="/games" >
+
+  <label for="league-field">League:</label>
+  <select
+  name="league_id" 
+  id="league-field">
+    <% @leagues.each do |league| %>          
+      <option value=<%=league.id%>><%=league.name%></option>
+        <%end%>
+    </select>
+
+    <label for="round-1-runner-player-field">Round 1 Runner:</label>
+    <select
+    name="round1_runner_player_id" 
+    id="round1-runner-player-id-field">
+      <% @players.each do |player| %>          
+        <option value=<%=player.id%>><%=player.name%></option>
+          <%end%>
+      </select>
+
+    <label for="round-1-runner-faction-field">Round 1 Runner Faction:</label>
+    <select
+      id="round1_runner_faction-field">
+        <% @leagues.each do |league| %>          
+          <option value=<%=league.id%>><%=league.name%></option>
+            <%end%>
+        </select>
+
+
+
+
+
+
+
+  <label for="tag-field">Tag:</label>
+  <input
+  type="text"
+  name="tag" 
+  id="tag-field"
+  />
+
+  <label for="runner-faction-field">Runner Faction:</label>
+  <input
+  type="text"
+  name="runner_faction" 
+  id="runner-faction-field"
+  
+  <label for="runner-identity-field">Runner Identity:</label>
+  <input
+  type="text"
+  name="runner_identity" 
+  id="runner-identity-field"
+  />
+
+  <label for="corp-faction-field">Corp Faction:</label>
+  <input
+  type="text"
+  name="corp_faction" 
+  id="corp-faction-field"
+  />
+
+  <label for="corp-identity-field">Corp Identity:</label>
+  <input
+  type="text"
+  name="corp_identity" 
+  id="corp-identity-field"
+  />
+
+  <label for="league-field">League:</label>
+  <select
+  name="league_id" 
+  id="league-field">
+    <% @leagues.each do |league| %>          
+      <option value=<%=league.id%>><%=league.name%></option>
+        <%end%>
+    </select>
+  
+    <input type="submit" value="Save this Run">
+</form>

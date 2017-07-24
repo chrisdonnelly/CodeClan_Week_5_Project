@@ -1,6 +1,20 @@
+DROP TABLE if EXISTS runners;
+DROP TABLE if EXISTS corps;
 DROP TABLE if EXISTS matches;
 DROP TABLE if EXISTS players;
 DROP TABLE if EXISTS leagues;
+
+CREATE TABLE runners (
+  id SERIAL4 PRIMARY KEY,
+  faction VARCHAR(255),
+  name VARCHAR(255)
+  );
+
+CREATE TABLE corps (
+  id SERIAL4 PRIMARY KEY,
+  faction VARCHAR(255),
+  name VARCHAR(255)
+  );
 
 CREATE TABLE leagues (
   id SERIAL4 PRIMARY KEY,
@@ -24,6 +38,7 @@ CREATE TABLE players (
 
 CREATE TABLE matches (
   id SERIAL4 PRIMARY KEY,
+  league_id INT4 REFERENCES leagues(id)
   round1_runner_player_id INT4 REFERENCES players(id),
   round1_runner_faction VARCHAR(255),
   round1_runner_identity VARCHAR(255),
