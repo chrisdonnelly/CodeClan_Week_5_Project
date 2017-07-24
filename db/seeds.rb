@@ -27,7 +27,6 @@ runner10 = Runner.new('faction' => 'Shaper', 'name' => 'Rielle "Kit" Peddler: Tr
 runner10.save
 runner11 = Runner.new('faction' => 'Shaper', 'name' => 'The Professor: Keeper of Knowledge')
 runner11.save
-
 runner12 = Runner.new('faction' => 'Criminal', 'name' => 'Andromeda: Dispossessed Ristie')
 runner12.save
 runner13 = Runner.new('faction' => 'Criminal', 'name' => 'Armand "Geist" Walker: Tech Lord')
@@ -54,6 +53,117 @@ runner23 = Runner.new('faction' => 'Criminal', 'name' => 'Silhouette: Stealth Op
 runner23.save
 runner24 = Runner.new('faction' => 'Criminal', 'name' => 'Steve Cambridge: Master Grifter')
 runner24.save
+runner25 = Runner.new('faction' => 'Anarh', 'name' => 'Alice Merchant: Clan Agitator')
+runner25.save
+runner26 = Runner.new('faction' => 'Anarh', 'name' => 'Edward Kim: Humanity\'s Hammer')
+runner26.save
+runner27 = Runner.new('faction' => 'Anarh', 'name' => 'MaxX: Maximum Punk Rock')
+runner27.save
+runner28 = Runner.new('faction' => 'Anarh', 'name' => 'Noise: Hacker Extraordinaire')
+runner28.save
+runner29 = Runner.new('faction' => 'Anarh', 'name' => 'Null: Whistleblower')
+runner29.save
+runner30 = Runner.new('faction' => 'Anarh', 'name' => 'Omar Keung: Conspiracy Theorist')
+runner30.save
+runner31 = Runner.new('faction' => 'Anarh', 'name' => 'Quetzal: Free Spirit')
+runner31.save
+runner32 = Runner.new('faction' => 'Anarh', 'name' => 'Reina Roja: Freedom Fighter')
+runner32.save
+runner33 = Runner.new('faction' => 'Anarh', 'name' => 'Valencia Estevez: The Angel of Cayambe')
+runner33.save
+runner34 = Runner.new('faction' => 'Anarh', 'name' => 'Whizzard: Master Gamer')
+runner34.save
+runner35 = Runner.new('faction' => 'Anarh', 'name' => 'Wyvern: Chemically Enhanced')
+runner35.save
+
+corp1 = Corp.new('faction' => 'Hass-Bioroid', 'name' => 'Cerebral Imaging: Infinite Frontiers')
+corp1.save
+corp2 = Corp.new('faction' => 'Hass-Bioroid', 'name' => 'Custom Biotics: Engineered for Success')
+corp2.save
+corp3 = Corp.new('faction' => 'Hass-Bioroid', 'name' => 'Cybernetics Division: Humanity Upgraded')
+corp3.save
+corp4 = Corp.new('faction' => 'Hass-Bioroid', 'name' => 'Architects of Tomorrow')
+corp4.save
+corp5 = Corp.new('faction' => 'Hass-Bioroid', 'name' => 'Engineering the Future')
+corp5.save
+corp6 = Corp.new('faction' => 'Hass-Bioroid', 'name' => 'Stronger Together')
+corp6.save
+corp7 = Corp.new('faction' => 'Hass-Bioroid', 'name' => 'NEXT Design: Guarding the Net')
+corp7.save
+corp8 = Corp.new('faction' => 'Hass-Bioroid', 'name' => 'Seidr Laboratories: Destiny Defined')
+corp8.save
+corp9 = Corp.new('faction' => 'Hass-Bioroid', 'name' => 'Strategic Innovations: Future Forward')
+corp9.save
+corp10 = Corp.new('faction' => 'Hass-Bioroid', 'name' => 'The Foundry: Refining the Process')
+corp10.save
+
+corp11 = Corp.new('faction' => 'Jinteki', 'name' => 'AgInfusion: New Miracles for a New World')
+corp11.save
+corp12 = Corp.new('faction' => 'Jinteki', 'name' => 'Chronos Protocol: Selective Mind-mapping')
+corp12.save
+corp13 = Corp.new('faction' => 'Jinteki', 'name' => 'Harmony Medtech: Biomedical Pioneer')
+corp13.save
+corp14 = Corp.new('faction' => 'Jinteki', 'name' => 'Industrial Genomics: Growing Solutions')
+corp14.save
+corp15 = Corp.new('faction' => 'Jinteki', 'name' => 'Jinteki Biotech: Life Imagined')
+corp15.save
+corp16 = Corp.new('faction' => 'Jinteki', 'name' => 'Personal Evolution')
+corp16.save
+corp17 = Corp.new('faction' => 'Jinteki', 'name' => 'Potential Unleashed')
+corp17.save
+corp18 = Corp.new('faction' => 'Jinteki', 'name' => 'Replicating Perfection')
+corp18.save
+corp19 = Corp.new('faction' => 'Jinteki', 'name' => 'Nisei Division: The Next Generation')
+corp19.save
+corp20 = Corp.new('faction' => 'Jinteki', 'name' => 'Pālanā Foods: Sustainable Growth')
+corp20.save
+corp21 = Corp.new('faction' => 'Jinteki', 'name' => 'Synthetic Systems: The World Re-imagined')
+corp21.save
+corp22 = Corp.new('faction' => 'Jinteki', 'name' => 'Tennin Institute: The Secrets Within')
+corp22.save
+corp23 = Corp.new('faction' => 'NBN', 'name' => 'Haarpsichord Studios: Entertainment Unleashed')
+corp23.save
+corp24 = Corp.new('faction' => 'NBN', 'name' => 'Harishchandra Entertainment: Where You\'re the Star')
+corp24.save
+corp25 = Corp.new('faction' => 'NBN', 'name' => 'Information Dynamics: All You Need To Know')
+corp25.save
+corp26 = Corp.new('faction' => 'NBN', 'name' => 'Controlling the Message')
+corp26.save
+corp27 = Corp.new('faction' => 'NBN', 'name' => 'Making News')
+corp27.save
+corp28 = Corp.new('faction' => 'NBN', 'name' => 'The World is Yours')
+corp28.save
+corp29 = Corp.new('faction' => 'NBN', 'name' => 'Near-Earth Hub: Broadcast Center')
+corp29.save
+corp30 = Corp.new('faction' => 'NBN', 'name' => 'New Angeles Sol: Your News')
+corp30.save
+corp31 = Corp.new('faction' => 'NBN', 'name' => 'Spark Agency: Worldswide Reach')
+corp31.save
+corp32 = Corp.new('faction' => 'NBN', 'name' => 'SYNC: Everything, Everywhere')
+corp32.save
+corp33 = Corp.new('faction' => 'Weyland Consortium', 'name' => 'Argus Security: Protection Guaranteed')
+corp33.save
+corp34 = Corp.new('faction' => 'Weyland Consortium', 'name' => 'Blue Sun: Powering the Future')
+corp34.save
+corp35 = Corp.new('faction' => 'Weyland Consortium', 'name' => 'Fringe Applications: Tomorrow, Today')
+corp35.save
+corp36 = Corp.new('faction' => 'Weyland Consortium', 'name' => 'Gagarin Deep Space: Expanding the Horizon')
+corp36.save
+corp37 = Corp.new('faction' => 'Weyland Consortium', 'name' => 'GRNDL: Power Unleashed')
+corp37.save
+corp38 = Corp.new('faction' => 'Weyland Consortium', 'name' => 'Jemison Astronautics: Sacrifice. Audacity. Success.')
+corp38.save
+corp39 = Corp.new('faction' => 'Weyland Consortium', 'name' => 'Skorpios Defense Systems: Persuasive Power')
+corp39.save
+corp40 = Corp.new('faction' => 'Weyland Consortium', 'name' => 'Titan Transnational: Investing In Your Future')
+corp40.save
+corp41 = Corp.new('faction' => 'Weyland Consortium', 'name' => 'Because We Built It')
+corp41.save
+corp42 = Corp.new('faction' => 'Weyland Consortium', 'name' => 'Builder of Nations')
+corp42.save
+corp43 = Corp.new('faction' => 'Weyland Consortium', 'name' => 'Building a Better World')
+corp43.save
+
 
 
 league1 = League.new('name' => 'League 1', 'start_date' => '29-07-17', 'end_date' => '05-08-17', 'max_players' => '6')
