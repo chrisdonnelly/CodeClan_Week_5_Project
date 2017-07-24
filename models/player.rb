@@ -1,3 +1,4 @@
+require('pry')
 require_relative('../db/sql_runner.rb')
 
 class Player
@@ -32,12 +33,48 @@ class Player
     )
     VALUES
     (
-    $1, $2, $3, $4, $5, $6 $7
+    #{first_name}, 
+    #{surname},
+    #{tag},
+    #{runner_faction}, 
+    #{runner_identity}, 
+    #{corp_faction}, 
+    #{corp_identity},
+    #{league_id}
     )
     RETURNING id"
-    values = [@first_name, @surname, @tag, @runner_faction, @runner_identity, @corp_faction, @corp_identity, @league_id]
-    results = SqlRunner.run(sql, values)
-    @id = results.first()['id'].to_i
+    # values = [@first_name, @surname, @tag, @runner_faction, @runner_identity, @corp_faction, @corp_identity, @league_id]
+    # results = SqlRunner.run(sql, values)
+    # @id = results.first()['id'].to_i
+    result = SqlRunner.run(sql)[0]
+    @id = result['id']
   end
+
+  def self.find(id)
+    sql = "SELECT * FROM players WHERE id=#{id};"
+    student = SqlRunner.run(sql)
+    result = Player.new(student.first)
+    return result
+    end
+
+  def self.find_all
+    sql = "SELECT * FROM players"
+    players = SqlRunner.run(sql)
+    result = players.map {|player| Player.new(player)}
+    return result
+  end
+
+  def self.delete(id)
+    sql = "DELETE * FROM players WHERE id=#{id};"
+    SqlRunner.run(sql)
+  end
+
+  def self.delete_all
+    sql = "DELETE FROM players;"
+    SqlRunner.run(sql)
+    end
+
+
+
 
 end
