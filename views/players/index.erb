@@ -1,0 +1,13 @@
+<h2>Players</h2>
+<hr />
+<% @players.each do |player| %>
+  <p>First Name: <%= player.first_name %></p>
+  <p>Surname:  <%= player.surname %></p>
+  <p>Tag:  <%= player.tag %></p>
+  <p>Runner Faction: <%= player.runner_faction %></p>
+  <p>Runner Identity: <%= player.runner_identity %></p>
+  <p>Corp Faction: <%= player.corp_faction %></p>
+  <p>Corp Identity: <%= player.corp_identity %></p>
+  <p>League ID : <%= player.league_id %></p>
+    <hr />
+    <% end %>

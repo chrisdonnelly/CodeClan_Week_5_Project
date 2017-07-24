@@ -5,26 +5,26 @@ class Player
 
   attr_reader :league_id
 
-  attr_accessor :first_name, :surname, :runner_faction, :runner_identity, :corp_faction, :corp_identity
+  attr_accessor :first_name, :surname, :tag, :runner_faction, :runner_identity, :corp_faction, :corp_identity
 
-  def initialize(options)
+def initialize(options)
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
-    @surname = options['second_name']
+    @surname = options['surname']
     @tag = options['tag']
     @runner_faction = options['runner_faction']
     @runner_identity = options['runner_identity']
     @corp_faction = options['corp_faction']
     @corp_identity = options['corp_identity']
     @league_id = options['league_id'].to_i
-  end
+end
 
-  def save
+def save
     sql = "INSERT INTO players
     (
     first_name, 
     surname,
-    tag 
+    tag, 
     runner_faction, 
     runner_identity, 
     corp_faction, 
@@ -33,14 +33,14 @@ class Player
     )
     VALUES
     (
-    #{first_name}, 
-    #{surname},
-    #{tag},
-    #{runner_faction}, 
-    #{runner_identity}, 
-    #{corp_faction}, 
-    #{corp_identity},
-    #{league_id}
+    '#{@first_name}', 
+    '#{@surname}',
+    '#{@tag}',
+    '#{@runner_faction}', 
+    '#{@runner_identity}', 
+    '#{@corp_faction}', 
+    '#{@corp_identity}',
+    '#{@league_id}'
     )
     RETURNING id"
     # values = [@first_name, @surname, @tag, @runner_faction, @runner_identity, @corp_faction, @corp_identity, @league_id]
@@ -48,31 +48,46 @@ class Player
     # @id = results.first()['id'].to_i
     result = SqlRunner.run(sql)[0]
     @id = result['id']
-  end
+end
 
-  def self.find(id)
+def update()
+  sql = "UPDATE players SET
+    first_name = '#{@first_name}',
+    surname = '#{@surname}',
+    tag = '#{@tag}',
+    runner_faction = '#{@runner_faction}',
+    runner_identity = '#{runner_identity}',
+    corp_faction = '#{corp_faction}',
+    corp_identity = '#{corp_identity}',
+    league_id = '#{league_id}',
+    WHERE id = '#{ @id }';"
+  SqlRunner.run( sql )
+end
+
+
+def self.find(id)
     sql = "SELECT * FROM players WHERE id=#{id};"
     student = SqlRunner.run(sql)
     result = Player.new(student.first)
     return result
-    end
+end
 
-  def self.find_all
+def self.find_all
     sql = "SELECT * FROM players"
     players = SqlRunner.run(sql)
     result = players.map {|player| Player.new(player)}
     return result
-  end
+end
 
-  def self.delete(id)
+def self.delete(id)
     sql = "DELETE * FROM players WHERE id=#{id};"
     SqlRunner.run(sql)
-  end
+end
 
-  def self.delete_all
+def self.delete_all
     sql = "DELETE FROM players;"
     SqlRunner.run(sql)
-    end
+end
 
 
 

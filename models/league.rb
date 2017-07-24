@@ -19,16 +19,16 @@ class League
     name, 
     start_date, 
     end_date, 
-    max_players,
+    max_players
     )
     VALUES
     (
-    #{@name}, 
-    #{@start_date}, 
-    #{@end_date}, 
-    #{@max_players}
+    '#{@name}', 
+    '#{@start_date}', 
+    '#{@end_date}', 
+    '#{@max_players}'
     ) 
-    RETURNING id"
+    RETURNING id;"
     # values = [@name, @start_date, @end_date, @max_players]
     # results = SqlRunner.run(sql, values)
     # @id = results.first()['id'].to_i
@@ -38,10 +38,10 @@ class League
 
   def self.find(id)
     sql = "SELECT * FROM leagues WHERE id=#{id};"
-    leauge = SqlRunner.run(sql)
+    league = SqlRunner.run(sql)
     result = League.new(league.first)
     return result
-    end
+  end
 
   def self.find_all
     sql = "SELECT * FROM leagues"
@@ -58,6 +58,6 @@ class League
   def self.delete_all
     sql = "DELETE FROM leagues;"
     SqlRunner.run(sql)
-    end
+  end
 
 end

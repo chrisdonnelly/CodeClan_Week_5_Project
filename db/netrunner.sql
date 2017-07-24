@@ -12,7 +12,7 @@ CREATE TABLE leagues (
 CREATE TABLE players (
   id SERIAL4 PRIMARY KEY,
   first_name VARCHAR(255),
-  second_name VARCHAR(255),
+  surname VARCHAR(255),
   tag VARCHAR(255),
   runner_faction VARCHAR(255),
   runner_identity VARCHAR(255),
