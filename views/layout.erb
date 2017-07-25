@@ -2,12 +2,34 @@
 <html lang="en-GB">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../styles.css" media="screen">
   <title>Android: Netrunner</title>
 </head>
-<header>
-  <img src="../adn01_feature_art.jpg" alt="game logo" id="logo"
-  </header>
-  <hr /> 
-  <%= yield %>
+    
+    <header>
+    </header>
+
+<body>
+
+  <main class="flex flex--row">
+
+  <nav>
+    <ul>
+      <li>
+        <a href="/players">Players</a>
+      </li>
+      <li>
+        <a href="/leagues">Leagues</a>
+      </li>
+      <li>
+        <a href="/games">Matches</a>
+      </li>
+    </ul>
+  </nav>
+    <section id="content">
+    <%= yield %>
+    </section>
+    </main>
+
 </body>
 </html>

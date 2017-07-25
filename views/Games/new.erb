@@ -14,7 +14,7 @@
     <select
     name="round1_runner_player_id" 
     id="round1-runner-player-id-field">
-      <% @players.each do |player| %>          
+      <% @players.each do |player| player.league_id %>          
         <option value=<%=player.id%>><%=player.tag%></option>
           <%end%>
       </select>
