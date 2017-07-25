@@ -30,18 +30,22 @@ nav {
   padding-right: 25px;
   padding-top: 80px;
   font-size: xx-large;
-  text="aliceblue";
 }
 
 nav ul li {
   margin-bottom: 15px;
-  text-transform: uppercase:;
+  text-transform: uppercase;
 }
 
 ul {
   padding: 0px;
   margin: 0px;
   list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 main {
@@ -69,5 +73,12 @@ header {
 
 #content {
   border-left: 1px solid darkred;
-  padding-left: 25px;
+  padding-left: 40px;
+  padding-top: 70px;
+  text-decoration: none;
+  color: white;
+}
+
+p.big {
+    line-height: 1.8;
 }

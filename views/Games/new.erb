@@ -1,141 +1,168 @@
-
 <form method="post" action="/games" >
 
-  <label for="league-field">League:</label>
-  <select
-  name="league_id" 
-  id="league-field">
-    <% @leagues.each do |league| %>          
-      <option value=<%=league.id%>><%=league.name%></option>
-        <%end%>
-    </select>
+<p class="big">
+<label for="league-field">League:</label>
+<select
+name="league_id" 
+id="league-field">
+<% @leagues.each do |league| %>          
+<option value=<%=league.id%>><%=league.name%></option>
+<%end%>
+</select>
+</p>
 
-    <label for="round-1-runner-player-field">Round 1 Runner:</label>
-    <select
-    name="round1_runner_player_id" 
-    id="round1-runner-player-id-field">
-      <% @players.each do |player| player.league_id %>          
-        <option value=<%=player.id%>><%=player.tag%></option>
-          <%end%>
-      </select>
+<p class="big">
+<label for="round-1-runner-player-field">Round 1 Runner:</label>
+<select
+name="round1_runner_player_id"
+id="round1-runner-player-id-field">
+<% @players.each do |player| player.league_id %>          
+<option value=<%=player.id%>><%=player.tag%></option>
+<%end%>
+</select>
+</p>
 
-    <label for="round-1-runner-faction-field">Round 1 Runner Faction:</label>
-    <select
-    name="round1_runner_faction_id" 
-    id="round1-runner-faction-field">
-      <% @runner_factions.each do |runner_faction| %>     
-        <option value=<%=runner_faction.id%>><%=runner_faction.name%></option>
-          <%end%>
-      </select>
+<p class="big">
+<label for="round-1-runner-faction-field">Round 1 Runner Faction:</label>
+<select
+name="round1_runner_faction_id" 
+id="round1-runner-faction-field">
+<% @runner_factions.each do |runner_faction| %>
+<option value=<%=runner_faction.id%>><%=runner_faction.name%></option>
+<%end%>
+</select>
+</p>
 
-      <label for="round-1-runner-identity-field">Round 1 Runner Identity:</label>
-      <select
-      name="round1_runner_identity_id" 
-      id="round1-runner-identity-field">
-        <% @runners.each do |runner| %>     
-          <option value=<%=runner.id%>><%=runner.name%></option>
-            <%end%>
-        </select>
+<p class="big">
+<label for="round-1-runner-identity-field">Round 1 Runner Identity:</label>
+<select
+name="round1_runner_identity_id" 
+id="round1-runner-identity-field">
+<% @runners.each do |runner| %>     
+<option value=<%=runner.id%>><%=runner.name%></option>
+<%end%>
+</select>
+</p>
 
-    <label for="round-1-corp-player-field">Round 1 Corp:</label>
-    <select
-    name="round1_corp_player_id" 
-    id="round1-corp-player-id-field">
-      <% @players.each do |player| %>          
-        <option value=<%=player.id%>><%=player.tag%></option>
-          <%end%>
-      </select>
+<p class="big">
+<label for="round-1-corp-player-field">Round 1 Corp:</label>
+<select
+name="round1_corp_player_id" 
+id="round1-corp-player-id-field">
+<% @players.each do |player| %>
+<option value=<%=player.id%>><%=player.tag%></option>
+<%end%>
+</select>
+</p>
 
-      <label for="round-1-corp-faction-field">Round 1 Corp Faction:</label>
-      <select
-      name="round1_corp_faction_id" 
-      id="round1-corp-faction-field">
-        <% @corp_factions.each do |corp_faction| %>     
-          <option value=<%=corp_faction.id%>><%=corp_faction.name%></option>
-            <%end%>
-        </select>
+<p class="big">
+<label for="round-1-corp-faction-field">Round 1 Corp Faction:</label>
+<select
+name="round1_corp_faction_id" 
+id="round1-corp-faction-field">
+<% @corp_factions.each do |corp_faction| %>     
+<option value=<%=corp_faction.id%>><%=corp_faction.name%></option>
+<%end%>
+</select>
+</p>
 
-        <label for="round-1-corp-identity-field">Round 1 corp Identity:</label>
-        <select
-        name="round1_corp_identity_id" 
-        id="round1-corp-identity-field">
-          <% @corps.each do |corp| %>     
-            <option value=<%=corp.id%>><%=corp.name%></option>
-              <%end%>
-          </select>
+<p class="big">
+<label for="round-1-corp-identity-field">Round 1 corp Identity:</label>
+<select
+name="round1_corp_identity_id" 
+id="round1-corp-identity-field">
+<% @corps.each do |corp| %>     
+<option value=<%=corp.id%>><%=corp.name%></option>
+<%end%>
+</select>
+</p>
 
-          <label for="round-1-runner-winner-field">Round 1 Winner:</label>
-          <select
-          name="round1_winner_id" 
-          id="round1-winner-id-field">
-            <% @players.each do |player| %>          
-              <option value=<%=player.id%>><%=player.tag%></option>
-                <%end%>
-            </select>
+<p class="big">
+<label for="round-1-runner-winner-field">Round 1 Winner:</label>
+<select
+name="round1_winner_id" 
+id="round1-winner-id-field">
+<% @players.each do |player| %>          
+<option value=<%=player.id%>><%=player.tag%></option>
+<%end%>
+</select>
 
-          <label for="round-2-runner-player-field">Round 2 Runner:</label>
-          <select
-          name="round2_runner_player_id" 
-          id="round2-runner-player-id-field">
-            <% @players.each do |player| %>          
-              <option value=<%=player.id%>><%=player.tag%></option>
-                <%end%>
-            </select>
+<p class="big">
+<label for="round-2-runner-player-field">Round 2 Runner:</label>
+<select
+name="round2_runner_player_id" 
+id="round2-runner-player-id-field">
+<% @players.each do |player| %>          
+<option value=<%=player.id%>><%=player.tag%></option>
+<%end%>
+</select>
+</p>
 
-          <label for="round-2-runner-faction-field">Round 2 Runner Faction:</label>
-          <select
-          name="round2_runner_faction_id" 
-          id="round2-runner-faction-field">
-            <% @runner_factions.each do |runner_faction| %>     
-              <option value=<%=runner_faction.id%>><%=runner_faction.name%></option>
-                <%end%>
-            </select>
+<p class="big">
+<label for="round-2-runner-faction-field">Round 2 Runner Faction:</label>
+<select
+name="round2_runner_faction_id" 
+id="round2-runner-faction-field">
+<% @runner_factions.each do |runner_faction| %>     
+<option value=<%=runner_faction.id%>><%=runner_faction.name%></option>
+<%end%>
+</select>
+</p>
 
-            <label for="round-2-runner-identity-field">Round 2 Runner Identity:</label>
-            <select
-            name="round2_runner_identity_id" 
-            id="round2-runner-identity-field">
-              <% @runners.each do |runner| %>     
-                <option value=<%=runner.id%>><%=runner.name%></option>
-                  <%end%>
-              </select>
+<p class="big">
+<label for="round-2-runner-identity-field">Round 2 Runner Identity:</label>
+<select
+name="round2_runner_identity_id" 
+id="round2-runner-identity-field">
+<% @runners.each do |runner| %>     
+<option value=<%=runner.id%>><%=runner.name%></option>
+<%end%>
+</select>
+</p>
 
-          <label for="round-2-corp-player-field">Round 2 Corp:</label>
-          <select
-          name="round2_corp_player_id" 
-          id="round2-corp-player-id-field">
-            <% @players.each do |player| %>          
-              <option value=<%=player.id%>><%=player.tag%></option>
-                <%end%>
-            </select>
+<p class="big">
+<label for="round-2-corp-player-field">Round 2 Corp:</label>
+<select
+name="round2_corp_player_id" 
+id="round2-corp-player-id-field">
+<% @players.each do |player| %>          
+<option value=<%=player.id%>><%=player.tag%></option>
+<%end%>
+</select>
+</p>
 
-            <label for="round-2-corp-faction-field">Round 2 Corp Faction:</label>
-            <select
-            name="round2_corp_faction_id" 
-            id="round2-corp-faction-field">
-              <% @corp_factions.each do |corp_faction| %>     
-                <option value=<%=corp_faction.id%>><%=corp_faction.name%></option>
-                  <%end%>
-              </select>
+<p class="big">
+<label for="round-2-corp-faction-field">Round 2 Corp Faction:</label>
+<select
+name="round2_corp_faction_id" 
+id="round2-corp-faction-field">
+<% @corp_factions.each do |corp_faction| %>
+<option value=<%=corp_faction.id%>><%=corp_faction.name%></option>
+<%end%>
+</select>
+</p>
 
-              <label for="round-2-corp-identity-field">Round 2 corp Identity:</label>
-              <select
-              name="round2_corp_identity_id" 
-              id="round2-corp-identity-field">
-                <% @corps.each do |corp| %>     
-                  <option value=<%=corp.id%>><%=corp.name%></option>
-                    <%end%>
-                </select>
+<p class="big">
+<label for="round-2-corp-identity-field">Round 2 corp Identity:</label>
+<select
+name="round2_corp_identity_id"
+id="round2-corp-identity-field">
+<% @corps.each do |corp| %>     
+<option value=<%=corp.id%>><%=corp.name%></option>
+<%end%>
+</select>
+</p>
 
-                <label for="round-1-runner-winner-field">Round 1 Winner:</label>
-                <select
-                name="round1_winner_id" 
-                id="round1-winner-id-field">
-                  <% @players.each do |player| %>          
-                    <option value=<%=player.id%>><%=player.tag%></option>
-                      <%end%>
-                  </select>
+<p class="big">
+<label for="round-1-runner-winner-field">Round 1 Winner:</label>
+<select
+name="round1_winner_id" 
+id="round1-winner-id-field">
+<% @players.each do |player| %>
+<option value=<%=player.id%>><%=player.tag%></option>
+<%end%>
+</select>
+</p>
 
-
-    <input type="submit" value="Save this Run">
+<input type="submit" value="Save this Run">
 </form>
