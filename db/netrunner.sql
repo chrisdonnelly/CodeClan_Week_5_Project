@@ -1,18 +1,31 @@
-DROP TABLE if EXISTS runners;
-DROP TABLE if EXISTS corps;
-DROP TABLE if EXISTS matches;
+DROP TABLE if EXISTS games;
 DROP TABLE if EXISTS players;
 DROP TABLE if EXISTS leagues;
+DROP TABLE if EXISTS runners;
+DROP TABLE if EXISTS corps;
+DROP TABLE if EXISTS runner_factions;
+DROP TABLE if EXISTS corp_factions;
+
+
+CREATE TABLE runner_factions (
+  id SERIAL4 PRIMARY KEY,
+  name VARCHAR(255)
+  );
+
+CREATE TABLE corp_factions (
+  id SERIAL4 PRIMARY KEY,
+  name VARCHAR(255)
+  );
 
 CREATE TABLE runners (
   id SERIAL4 PRIMARY KEY,
-  faction VARCHAR(255),
+  runner_faction_id INT4 REFERENCES runner_factions(id),
   name VARCHAR(255)
   );
 
 CREATE TABLE corps (
   id SERIAL4 PRIMARY KEY,
-  faction VARCHAR(255),
+  corp_faction_id INT4 REFERENCES corp_factions(id),
   name VARCHAR(255)
   );
 
@@ -29,28 +42,28 @@ CREATE TABLE players (
   first_name VARCHAR(255),
   surname VARCHAR(255),
   tag VARCHAR(255),
-  runner_faction VARCHAR(255),
-  runner_identity VARCHAR(255),
-  corp_faction VARCHAR(255),
-  corp_identity VARCHAR(255),
+  runner_faction_id INT4 REFERENCES runner_factions(id),
+  runner_identity_id INT4 REFERENCES runners(id),
+  corp_faction_id INT4 REFERENCES corp_factions(id),
+  corp_identity_id INT4 REFERENCES corps(id),
   league_id INT4 REFERENCES leagues(id)
   );
 
-CREATE TABLE matches (
+CREATE TABLE games (
   id SERIAL4 PRIMARY KEY,
-  league_id INT4 REFERENCES leagues(id)
+  league_id INT4 REFERENCES leagues(id),
   round1_runner_player_id INT4 REFERENCES players(id),
-  round1_runner_faction VARCHAR(255),
-  round1_runner_identity VARCHAR(255),
+  round1_runner_faction_id INT4 REFERENCES runner_factions(id),
+  round1_runner_identity_id INT4 REFERENCES runners(id),
   round1_corp_player_id INT4 REFERENCES players(id),
-  round1_corp_faction VARCHAR(255),
-  round1_corp_identity VARCHAR(255),
+  round1_corp_faction_id INT4 REFERENCES corp_factions(id),
+  round1_corp_identity_id INT4 REFERENCES corps(id),
   round1_winner_id INT4 REFERENCES players(id),
   round2_runner_player_id INT4 REFERENCES players(id),
-  round2_runner_faction VARCHAR(255),
-  round2_runner_identity VARCHAR(255),
+  round2_runner_faction_id INT4 REFERENCES runner_factions(id),
+  round2_runner_identity_id INT4 REFERENCES runners(id),
   round2_corp_player_id INT4 REFERENCES players(id),
-  round2_corp_faction VARCHAR(255),
-  round2_corp_identity VARCHAR(255),
+  round2_corp_faction_id INT4 REFERENCES corp_factions(id),
+  round2_corp_identity_id INT4 REFERENCES corps(id),
   round2_winner_id INT4 REFERENCES players(id)
   );

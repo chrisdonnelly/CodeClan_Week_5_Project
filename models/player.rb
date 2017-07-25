@@ -1,21 +1,25 @@
 require('pry')
 require_relative('../db/sql_runner.rb')
+require_relative('./runner.rb')
+require_relative('./corp.rb')
+require_relative('./corp_faction.rb')
+require_relative('./runner_faction.rb')
 
 class Player
 
   attr_reader :id, :league_id
 
-  attr_accessor :first_name, :surname, :tag, :runner_faction, :runner_identity, :corp_faction, :corp_identity
+  attr_accessor :first_name, :surname, :tag, :runner_faction_id, :runner_identity_id, :corp_faction_id, :corp_identity_id
 
 def initialize(options)
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @surname = options['surname']
     @tag = options['tag']
-    @runner_faction = options['runner_faction']
-    @runner_identity = options['runner_identity']
-    @corp_faction = options['corp_faction']
-    @corp_identity = options['corp_identity']
+    @runner_faction_id = options['runner_faction_id'].to_i
+    @runner_identity_id = options['runner_identity_id'].to_i
+    @corp_faction_id = options['corp_faction_id'].to_i
+    @corp_identity_id = options['corp_identity_id'].to_i
     @league_id = options['league_id'].to_i
 end
 
@@ -25,10 +29,10 @@ def save
     first_name, 
     surname,
     tag, 
-    runner_faction, 
-    runner_identity, 
-    corp_faction, 
-    corp_identity,
+    runner_faction_id, 
+    runner_identity_id, 
+    corp_faction_id, 
+    corp_identity_id,
     league_id
     )
     VALUES
@@ -36,10 +40,10 @@ def save
     '#{@first_name}', 
     '#{@surname}',
     '#{@tag}',
-    '#{@runner_faction}', 
-    '#{@runner_identity}', 
-    '#{@corp_faction}', 
-    '#{@corp_identity}',
+    '#{@runner_faction_id}', 
+    '#{@runner_identity_id}', 
+    '#{@corp_faction_id}', 
+    '#{@corp_identity_id}',
     '#{@league_id}'
     )
     RETURNING id"
@@ -55,18 +59,37 @@ def update()
     first_name = '#{@first_name}',
     surname = '#{@surname}',
     tag = '#{@tag}',
-    runner_faction = '#{@runner_faction}',
-    runner_identity = '#{runner_identity}',
-    corp_faction = '#{corp_faction}',
-    corp_identity = '#{corp_identity}',
-    league_id = '#{league_id}'
+    runner_faction_id = '#{@runner_faction_id}',
+    runner_identity_id = '#{@runner_identity_id}',
+    corp_faction_id = '#{@corp_faction_id}',
+    corp_identity_id = '#{@corp_identity_id}',
+    league_id = '#{@league_id}'
     WHERE id = '#{ @id }';"
   SqlRunner.run( sql )
 end
 
+def find_runner_faction
+    id = @runner_faction_id
+    return Runner_faction.find(id)
+end
+
+def find_runner_identity
+    id = @runner_identity_id
+    return Runner.find(id)
+end
+
+def find_corp_faction
+    id = @corp_faction_id
+    return Corp_faction.find(id)
+end
+
+def find_corp_identity
+    id = @corp_identity_id
+    return Corp.find(id)
+end
 
 def self.find(id)
-    sql = "SELECT * FROM players WHERE id=#{id};"
+    sql = "SELECT * FROM players WHERE id = #{id};"
     student = SqlRunner.run(sql)
     result = Player.new(student.first)
     return result
@@ -88,8 +111,5 @@ def self.delete_all
     sql = "DELETE FROM players;"
     SqlRunner.run(sql)
 end
-
-
-
 
 end

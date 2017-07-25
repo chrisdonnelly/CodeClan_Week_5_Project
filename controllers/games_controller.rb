@@ -1,5 +1,8 @@
-require'pry'
-require_relative'../models/game.rb'
+require('pry')
+require_relative('../models/game.rb')
+require_relative('../models/runner_faction.rb')
+require_relative('../models/corp_faction.rb')
+
 
 get '/games' do
     @games = Game.find_all
@@ -7,10 +10,14 @@ get '/games' do
 end
 
 get '/games/new' do
+  @runners = Runner.find_all
+  @corps = Corp.find_all
+  @runner_factions = Runner_faction.find_all
+  @corp_factions = Corp_faction.find_all
   @leagues = League.find_all
   @players = Player.find_all
   @game = Game.new(params)
-  erb(:"gamnes/new")
+  erb(:"games/new")
 end
 
 # post '/players' do

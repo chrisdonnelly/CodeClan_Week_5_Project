@@ -23,31 +23,40 @@
   />
 
   <label for="runner-faction-field">Runner Faction:</label>
-  <input
-  type="text"
-  name="runner_faction" 
-  id="runner-faction-field"
-  
-  <label for="runner-identity-field">Runner Identity:</label>
-  <input
-  type="text"
-  name="runner_identity" 
-  id="runner-identity-field"
-  />
+  <select
+  name="runner_faction_id" 
+  id="runner-faction-field">
+    <% @runner_factions.each do |runner_faction| %>
+      <option value=<%=runner_faction.id%>><%=runner_faction.name%></option>
+      <%end%>
+      </select>
 
-  <label for="corp-faction-field">Corp Faction:</label>
-  <input
-  type="text"
-  name="corp_faction" 
-  id="corp-faction-field"
-  />
+ <label for="runner-identity-field">Runner Identity:</label>
+ <select
+ name="runner_identity_id" 
+ id="runner-identity-field">
+   <% @runners.each do |runner| %>
+     <option value=<%=runner.id%>><%=runner.name%></option>
+     <%end%>
+     </select>
 
-  <label for="corp-identity-field">Corp Identity:</label>
-  <input
-  type="text"
-  name="corp_identity" 
-  id="corp-identity-field"
-  />
+     <label for="corp-faction-field">Corp Faction:</label>
+     <select
+     name="corp_faction_id" 
+     id="corp-faction-field">
+       <% @corp_factions.each do |corp_faction| %>
+         <option value=<%=corp_faction.id%>><%=corp_faction.name%></option>
+         <%end%>
+         </select>
+         
+         <label for="corp-identity-field">Corp Identity:</label>
+         <select
+         name="corp_identity_id" 
+         id="corp-identity-field">
+           <% @corps.each do |corp| %>
+             <option value=<%=corp.id%>><%=corp.name%></option>
+             <%end%>
+             </select>
 
   <label for="league-field">League:</label>
   <select

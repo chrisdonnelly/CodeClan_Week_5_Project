@@ -9,18 +9,18 @@ class Game
     @id = options['id'].to_i if options['id']
     @league_id = options['id'].to_i
     @round1_runner_player_id = options['round1_runner_player'].to_i
-    @round1_runner_faction = options['round1_runner_faction']
-    @round1_runner_identity = options['round1_runner_identity']
+    @round1_runner_faction_id = options['round1_runner_faction_id'].to_i
+    @round1_runner_identity_id = options['round1_runner_identity_id'].to_i
     @round1_corp_player_id = options['round1_corp_player_id'].to_i
-    @round1_corp_faction = options['round1_corp_faction']
-    @round1_corp_identity = options['round1_corp_identity']
+    @round1_corp_faction_id = options['round1_corp_faction_id'].to_i
+    @round1_corp_identity_id = options['round1_corp_identity_id'].to_i
     @round1_winner_id = options['round_winner_id'].to_i
     @round2_runner_player_id = options['round2_runner_player_id'].to_i
-    @round2_runner_faction = options['round2_runner_faction']
-    @round2_runner_identity = options['round2_runner_identity']
+    @round2_runner_faction_id = options['round2_runner_faction_id'].to_i
+    @round2_runner_identity_id = options['round2_runner_identity_id'].to_i
     @round2_corp_player_id = options['round2_corp_player_id'].to_i
-    @round2_corp_faction = options['round2_corp_faction']
-    @round2_corp_identity = options['round2_corp_identity']
+    @round2_corp_faction_id = options['round2_corp_faction_id'].to_i
+    @round2_corp_identity_id = options['round2_corp_identity_id'].to_i
     @round2_winner_id = options['round2_winner_id'].to_i
   end
 
@@ -29,37 +29,37 @@ class Game
     (
     league_id,
     round1_runner_player_id,
-    round1_runner_faction, 
-    round1_runner_identity, 
-    round1_corp_player_id, 
-    round1_corp_faction, 
-    round1_corp_identity,
+    round1_runner_faction_id,
+    round1_runner_identity_id, 
+    round1_corp_player_id,
+    round1_corp_faction_id, 
+    round1_corp_identity_id,
     round1_winner_id, 
-    round2_runner_player_id, 
-    round2_runner_faction,
-    round2_runner_identity, 
-    round2_corp_player_id, 
-    round2_corp_faction, 
-    round2_corp_identity, 
+    round2_runner_player_id,
+    round2_runner_faction_id, 
+    round2_runner_identity_id, 
+    round2_corp_player_id,
+    round2_corp_faction_id, 
+    round2_corp_identity_id, 
     round2_winner_id, 
     )
     VALUES
     (
-    '#{@league_id},'
+    '#{@league_id}',
     '#{@round1_runner_player_id}',
-    '#{@round1_runner_faction}',
-    '#{@round1_runner_identity}',
+    '#{@round1_runner_faction_id}',
+    '#{@round1_runner_identity_id}',
     '#{@round1_corp_player_id}',
-    '#{@round1_corp_faction}',
-    '#{@round1_corp_identity}',
+    '#{@round1_corp_faction_id}',
+    '#{@round1_corp_identity_id}',
     '#{@round1_winner_id}',
-    '#{round2_runner_player_id}, 
-    '#{round2_runner_faction},
-    '#{round2_runner_identity}, 
-    '#{round2_corp_player_id}, 
-    '#{round2_corp_faction}, 
-    '#{round2_corp_identity}, 
-    '#{round2_winner_id}
+    '#{@round2_runner_player_id}',
+    '#{@round2_runner_faction_id}', 
+    '#{@round2_runner_identity_id}',
+    '#{@round2_corp_player_id}',
+    '#{@round2_corp_faction_id}',
+    '#{@round2_corp_identity}', 
+    '#{@round2_winner_id}'
     )
     RETURNING id"
     result = SqlRunner.run(sql)[0]

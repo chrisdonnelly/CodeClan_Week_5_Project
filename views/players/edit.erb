@@ -3,10 +3,10 @@
 <p>First Name: <%= @player.first_name %></p>
 <p>Surname: <%= @player.surname %></p>
 <p>Tag: <%= @player.tag %></p>
-<p>Runner Faction: <%= @player.runner_faction %></p>
-<p>Runner Identity: <%= @player.runner_identity%></p>
-<p>Corp Faction: <%= @player.corp_faction%></p>
-<p>Corp Identity: <%= @player.corp_identity%></p>
+<p>Runner Faction: <%= @player.find_runner_faction.name %></p>
+<p>Runner Identity: <%= @player.find_runner_identity.name %></p>
+<p>Corp Faction: <%= @player.find_corp_faction.name %></p>
+<p>Corp Identity: <%= @player.find_corp_identity.name %></p>
 <p>League id: <%= @player.league_id%></p>
 
 <form method="post" action="/players/update/<%= @player.id %>"
@@ -36,35 +36,42 @@
   />
 
   <label for="runner-faction-field">Runner Faction:</label>
-  <input
-  type="text"
-  name="runner_faction" 
-  id="runner-faction-field"
-  value="<%= @player.runner_faction %>"
+  <select
+  name="runner_faction_id" 
+  id="runner-faction-field">
+    <% @runner_factions.each do |runner_faction| %>
+      <option value=<%=runner_faction.id%>><%=runner_faction.name%></option>
+      <%end%>
+      </select>
   
-  <label for="runner-identity-field">Runner Identity:</label>
-  <input
-  type="text"
-  name="runner_identity" 
-  id="runner-identity-field"
-  value="<%= @player.runner_identity %>"
-  />
+      <label for="runner-identity-field">Runner Identity:</label>
+      <select
+      name="runner_identity_id" 
+      id="runner-identity-field">
+        <% @runners.each do |runner| %>
+          <option value=<%=runner.id%>><%=runner.name%></option>
+          <%end%>
+          </select>
 
-  <label for="corp-faction-field">Corp Faction:</label>
-  <input
-  type="text"
-  name="corp_faction" 
-  id="corp-faction-field"
-  value="<%= @player.corp_faction %>"
-  />
 
-  <label for="corp-identity-field">Corp Identity:</label>
-  <input
-  type="text"
-  name="corp_identity" 
-  id="corp-identity-field"
-  value="<%= @player.corp_identity %>"
-  />
+          <label for="corp-faction-field">Corp Faction:</label>
+          <select
+          name="corp_faction_id" 
+          id="corp-faction-field">
+            <% @corp_factions.each do |corp_faction| %>
+              <option value=<%=corp_faction.id%>><%=corp_faction.name%></option>
+              <%end%>
+              </select>
+
+              <label for="corp-identity-field">Corp Identity:</label>
+              <select
+              name="corp_identity_id" 
+              id="corp-identity-field">
+                <% @corps.each do |corp| %>
+                  <option value=<%=corp.id%>><%=corp.name%></option>
+                  <%end%>
+                  </select>
+
 
   <label for="league-field">League:</label>
   <select
@@ -75,5 +82,5 @@
         <%end%>
     </select>
   
-    <input type="submit" value="Jack-in to the Grid">
+    <input type="submit" value="Upload Data">
 </form>
