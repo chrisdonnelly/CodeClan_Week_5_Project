@@ -1,0 +1,43 @@
+<h1>Please edit this League</h1>
+
+<p>Name: <%= @league.name %></p>
+<p>Start Date: <%= @league.start_date %></p>
+<p>End Date: <%= @league.end_date %></p>
+<p>Max Players: <%= @league.max_players %></p>
+
+<form method="post" action="/leagues/<%= @league.id %>/update/?"
+
+<label for="name-field">Name:</label>
+<input
+type="text"
+name="name" 
+id="name-field"
+value="<%= @league.name %>"
+/>
+
+<label for="start-date-field">Start Date:</label>
+<input
+type="text"
+name="start_date" 
+id="start-date-field"
+value="<%= @league.start_date %>"
+/>
+
+<label for="end-date-field">End Date:</label>
+<input
+type="text"
+name="end_date" 
+id="end-date-field"
+value="<%= @league.end_date %>"
+/>
+
+<label for="max-players-field">Max Players:</label>
+<input
+type="text"
+name="max_players" 
+id="max-players-field"
+value="<%= @league.max_players %>"
+/>
+
+<input type="submit" value="Upload Data">
+</form>

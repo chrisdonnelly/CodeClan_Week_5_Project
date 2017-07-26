@@ -15,7 +15,6 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  color: papayawhip;
   font-family: 'Monkirta Pursuit NC', serif;
   padding: 0px;
   margin: 0px;
@@ -58,15 +57,10 @@ main {
   padding: 25px;
 }
 
-img#homebackground {
+img#league {
   width: 1100px;
   height: 600px;
-}
-
-header {
-  width: 1500px;
-  heigh: 600;
-  display: flex;
+  size: 
 }
 
 .flex {
@@ -80,9 +74,10 @@ header {
 #content {
   padding-left: 250px;
   padding-top: 35px;
-  text-decoration: none;
+  text-decoration: ;
   text-shadow: 8px 8px 12px black;
   color: white;
+  -webkit-text-stroke: 1px black;
 }
 
 p.big {
@@ -95,41 +90,41 @@ p {
   font-size: larger;
 }
 
-#players{
-}
-
-.btn {
-  border:0px none;
-  border-radius: 3%;
-  padding: 8px 12px;
-  color: papayawhip;
+.btn--jack_in {
   cursor:pointer;
   font-family: 'Monkirta Pursuit NC', cursive;
-}
-
-.btn--jack_in {
   background-color: white;
   font-size: large;
   color: black;
+  border-radius: 12px;
+  padding: 8px 12px;
+  text-align: center;
+  cursor:pointer;
 }
 
 .btn--jack_in:hover {
   background-color: blue;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .btn--new {
+  cursor:pointer;
+  font-family: 'Monkirta Pursuit NC', cursive;
   background-color: white;
   font-size: large;
   color: black;
   border-radius: 12px;
   float: left;
-  border: 1px solid green;
+  border: 1px solid red;
+  padding: 8px 12px;
+  text-align: center;
+  cursor:pointer;
 }
 
 .btn--new:hover {
   background-color: blue;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
+};
 
 .btn--del {
   background-color: white;
@@ -138,6 +133,8 @@ p {
   border-radius: 12px;
   float: left;
   border: 1px solid red;
+  text-align: center;
+  cursor:pointer;
 }
 
 .btn--del:hover {
@@ -145,7 +142,47 @@ p {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+.lander{
+  background: black url('../images/leagueimage.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  font-family: 'Monkirta Pursuit NC', serif;
+  padding: 0px;
+  margin: 0px;
+}
 
+
+.btn--entry {
+  font-family: 'Monkirta Pursuit NC', cursive;
+  position: fixed;
+  left: 350px;
+  top:100px;
+  background-color: transparent; blue;
+  width: 50%;
+  font-size: xx-large;
+  text-shadow: 8px 8px 12px black;
+  -webkit-text-stroke: 1px black;
+  color: white;
+  border-radius: 12px;
+  float: left;
+  border-radius: 12px;
+  text-align: center;
+  cursor:pointer;
+}
+
+.btn--entry:hover {
+  background-color: blue;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.btn--entry:active {
+  background-color: cyan;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 
 /*position: relative;
 right: -150px;

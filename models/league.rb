@@ -36,6 +36,16 @@ class League
     @id = result['id']
   end
 
+  def update()
+    sql = "UPDATE leagues SET
+      name = '#{@name}',
+      start_date = '#{@start_date}',
+      end_date = '#{@end_date}',
+      max_players = '#{@max_players}'
+      WHERE id = '#{ @id }';"
+    SqlRunner.run( sql )
+  end
+
   def players
     current_players = []  
     sql = "SElECT players.tag FROM players INNER JOIN leagues ON players.league_id = leagues.id WHERE players.league_id = '#{@id}'"

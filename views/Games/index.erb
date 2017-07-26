@@ -1,20 +1,20 @@
 <h2>Match Records</h2>
 <hr />
 <% @games.each do |game| %>
-<p>League: <%=game.league_id %></p>
-<p>Round 1 Runner Player: <%=game.round1_runner_player_id %></p>
-<p>Round 1 Runner Faction: <%= game.round1_runner_faction %></p>
-<p>Round 1 Runner Identity:  <%= game.round1_runner_identity %></p>
-<p>Round 1 Corp Player: <%= game.round1_corp_player_id %></p>
-<p>Round 1 Corp Faction: <%= game.round1_corp_faction  %></p>
-<p>Round 1 Corp identity: <%= game.round1_corp_identity %></p>
-<p>Round 1 Winner: <%= game.round1_winner_id %></p>
-<p>Round 2 Runner Player: <%= game.round2_runner_player_id %></p>
-<p>Round 2 Runner Faction:  <%= game. round2_runner_faction %></p>
-<p>Round 2 Runner Identity:  <%= game.round2_runner_identity %></p>
-<p>Round 2 Corp Player: <%= game.round2_corp_player_id %></p>
-<p>Round 2 Corp Faction: <%= game.round2_corp_faction  %></p>
-<p>Round 2 Corp identity: <%= game.round2_corp_identity %></p>
-<p>Round 2 Winner: <%= game.round2_winner_id %></p>
+<p>League: <%=game.find_league.name%></p>
+<p>Round 1 Runner Player: <%=game.find_round1_runner_player.tag%></p>
+<p>Round 1 Runner Faction: <%= game.find_round1_runner_faction.name %></p>
+<p>Round 1 Runner Identity:  <%= game.find_round1_runner.name %></p>
+<p>Round 1 Corp Player: <%= game.find_round1_corp_player.tag%></p>
+<p>Round 1 Corp Faction: <%= game.find_round1_corp_faction.name  %></p>
+<p>Round 1 Corp identity: <%= game.find_round1_corp.name %></p>
+<p>Round 1 Winner: <%= game.find_round1_winner.tag%></p>
+<p>Round 2 Runner Player: <%= game.find_round2_runner_player.tag %></p>
+<p>Round 2 Runner Faction:  <%= game.find_round2_runner_faction.name %></p>
+<p>Round 2 Runner Identity:  <%= game.find_round2_runner.name %></p>
+<p>Round 2 Corp Player: <%= game.find_round2_corp_player.tag%></p>
+<p>Round 2 Corp Faction: <%= game.find_round2_corp_faction.name  %></p>
+<p>Round 2 Corp Identity: <%= game.find_round2_corp.name %></p>
+<p>Round 2 Winner: <%= game.find_round2_winner.tag %></p>
 <hr />
 <% end %>

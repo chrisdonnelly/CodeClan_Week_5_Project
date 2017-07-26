@@ -40,6 +40,6 @@ post '/players/:id/update/' do
 end
 
 post '/players/:id/delete/' do
-    Player.delete(:id)
+    Player.delete(params[:id])
     redirect to ('/players')
 end

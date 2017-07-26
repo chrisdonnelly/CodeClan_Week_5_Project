@@ -5,5 +5,5 @@ require_relative('controllers/leagues_controller')
 require_relative('controllers/games_controller')
 
 get '/' do
-  erb( :index )
+  erb( :index, :layout =>false )
 end

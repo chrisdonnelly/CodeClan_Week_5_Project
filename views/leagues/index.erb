@@ -5,5 +5,10 @@
   <p>Start Date:  <%= league.start_date %></p>
   <p>End Date:  <%= league.end_date %>
   <p>Maximum Players: <%= league.max_players %></p>
+  <form action="/leagues/<%=league.id%>/edit/" method = "GET">
+    <input class ="btn btn--new" input type="submit" value="Edit League">
+  </form>
+  <br>
+  <br>
     <hr />
     <% end %>
