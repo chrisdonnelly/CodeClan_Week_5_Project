@@ -10,7 +10,7 @@ class Player
 
   attr_reader :id, :league_id
 
-  attr_accessor :first_name, :surname, :tag, :runner_faction_id, :runner_identity_id, :corp_faction_id, :corp_identity_id
+  attr_accessor :first_name, :surname, :tag, :runner_faction_id, :runner_identity_id, :corp_faction_id, :corp_identity_id, :points
 
 def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -22,6 +22,7 @@ def initialize(options)
     @corp_faction_id = options['corp_faction_id'].to_i
     @corp_identity_id = options['corp_identity_id'].to_i
     @league_id = options['league_id'].to_i
+    @points = options['points'].to_i
 end
 
 def save
@@ -34,7 +35,8 @@ def save
     runner_identity_id, 
     corp_faction_id, 
     corp_identity_id,
-    league_id
+    league_id,
+    points
     )
     VALUES
     (
@@ -45,7 +47,8 @@ def save
     '#{@runner_identity_id}', 
     '#{@corp_faction_id}', 
     '#{@corp_identity_id}',
-    '#{@league_id}'
+    '#{@league_id}',
+    '#{@points}'
     )
     RETURNING id"
     # values = [@first_name, @surname, @tag, @runner_faction, @runner_identity, @corp_faction, @corp_identity, @league_id]
@@ -64,8 +67,9 @@ def update()
     runner_identity_id = '#{@runner_identity_id}',
     corp_faction_id = '#{@corp_faction_id}',
     corp_identity_id = '#{@corp_identity_id}',
-    league_id = '#{@league_id}'
-    WHERE id = '#{ @id }';"
+    league_id = '#{@league_id}',
+    points = #{@points}
+    WHERE id = '#{@id}';"
   SqlRunner.run( sql )
 end
 
@@ -92,6 +96,10 @@ end
 def find_league
     id = @league_id
     return League.find(id)
+end
+
+def find_points
+
 end
 
 def self.find(id)

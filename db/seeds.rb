@@ -7,19 +7,19 @@ require_relative'../models/runner.rb'
 require_relative'../models/runner_faction.rb'
 require_relative'../models/corp_faction.rb'
 
-runner_faction1 = Runner_faction.new('name' => 'Shaper')
+runner_faction1 = Runner_faction.new('name' => 'Shaper', 'logo' => 'https://vignette2.wikia.nocookie.net/ancur/images/e/e2/Shaper_Logo.png/revision/latest?cb=20141010171753')
 runner_faction1.save
-runner_faction2 = Runner_faction.new('name' => 'Anarch')
+runner_faction2 = Runner_faction.new('name' => 'Anarch', 'logo' => 'https://vignette2.wikia.nocookie.net/ancur/images/f/fc/Anarch_Logo.png/revision/latest?cb=20141010171750')
 runner_faction2.save
-runner_faction3 = Runner_faction.new('name' => 'Criminal')
+runner_faction3 = Runner_faction.new('name' => 'Criminal', 'logo' => 'http://www.cardgamedb.com/forums/uploads/ff5ba6d283e3f96b8c3fb9e02a7b6e15.jpg')
 runner_faction3.save
-corp_faction1 = Corp_faction.new('name' => 'Hass-Bioroid')
+corp_faction1 = Corp_faction.new('name' => 'Hass-Bioroid', 'logo' => 'https://vignette3.wikia.nocookie.net/ancur/images/3/3a/HB_Logo.png/revision/latest?cb=20141010171751')
 corp_faction1.save
-corp_faction2 = Corp_faction.new('name' => 'Jinteki')
+corp_faction2 = Corp_faction.new('name' => 'Jinteki', 'logo' => 'https://vignette4.wikia.nocookie.net/ancur/images/d/d5/Jinteki_Logo.png/revision/latest?cb=20141010171752')
 corp_faction2.save
-corp_faction3 = Corp_faction.new('name' => 'NBN')
+corp_faction3 = Corp_faction.new('name' => 'NBN', 'logo' => 'https://vignette3.wikia.nocookie.net/ancur/images/f/f9/NBN_Logo.png/revision/latest?cb=20141010171752')
 corp_faction3.save
-corp_faction4 = Corp_faction.new('name' => 'Weyland Consortium')
+corp_faction4 = Corp_faction.new('name' => 'Weyland Consortium', 'logo' => 'https://vignette3.wikia.nocookie.net/ancur/images/a/a3/Weyland_Logo.png/revision/latest?cb=20141010171753')
 corp_faction4.save
 
 runner1 = Runner.new('runner_faction_id' => runner_faction1.id, 'name' => 'Ayla "Bios" Rahim: Simulant Specialist')
@@ -192,44 +192,40 @@ league2.save
 player1 = Player.new('first_name' => 'Chris', 'surname' => 'Donnelly', 'tag' => 'C-d0g', 'runner_faction_id' => runner_faction1.id, 'runner_identity_id' => runner8.id, 'corp_faction_id' => corp_faction1.id, 'corp_identity_id' => corp5.id, 'league_id' => league1.id)
 player1.save
 
-player2 = Player.new('first_name' => 'Stephen', 'surname' => 'Beattie', 'tag' => 'Hanz0', 'runner_faction_id' => runner_faction1.id, 'runner_identity_id' => runner9.id, 'corp_faction_id' => corp_faction2.id, 'corp_identity_id' => corp15.id, 'league_id' => league1.id)
+player2 = Player.new('first_name' => 'Stephen', 'surname' => 'Beattie', 'tag' => 'Hanz0', 'runner_faction_id' => runner_faction1.id, 'runner_identity_id' => runner9.id, 'corp_faction_id' => corp_faction2.id, 'corp_identity_id' => corp15.id, 'league_id' => league1.id, 'points' => '0')
 player2.save
 
-player3 = Player.new('first_name' => 'John', 'surname' => 'Harper', 'tag' => 'Harpy98','runner_faction_id' => runner_faction1.id, 'runner_identity_id' => runner11.id, 'corp_faction_id' => corp_faction4.id, 'corp_identity_id' => corp36.id, 'league_id' => league1.id)
+player3 = Player.new('first_name' => 'John', 'surname' => 'Harper', 'tag' => 'Harpy98','runner_faction_id' => runner_faction1.id, 'runner_identity_id' => runner11.id, 'corp_faction_id' => corp_faction4.id, 'corp_identity_id' => corp36.id, 'league_id' => league1.id, 'points' => '0')
 player3.save
 
-player4 = Player.new('first_name' => 'Alex', 'surname' => 'Bazlinton', 'tag' => 'Bazinat0r', 'runner_faction_id' => runner_faction3.id, 'runner_identity_id' => runner15.id, 'corp_faction_id' => corp_faction3.id, 'corp_identity_id' => corp26.id, 'league_id' => league1.id)
+player4 = Player.new('first_name' => 'Alex', 'surname' => 'Bazlinton', 'tag' => 'Bazinat0r', 'runner_faction_id' => runner_faction3.id, 'runner_identity_id' => runner15.id, 'corp_faction_id' => corp_faction3.id, 'corp_identity_id' => corp26.id, 'league_id' => league1.id, 'points' => '0')
 player4.save
 
-player5 = Player.new('first_name' => 'Keith', 'surname' => 'Douglas', 'tag' => 'R0kaBi11ie','runner_faction_id' => runner_faction2.id, 'runner_identity_id' => runner31.id, 'corp_faction_id' => corp_faction1.id, 'corp_identity_id' => corp1.id, 'league_id' => league1.id)
+player5 = Player.new('first_name' => 'Keith', 'surname' => 'Douglas', 'tag' => 'R0kaBi11ie','runner_faction_id' => runner_faction2.id, 'runner_identity_id' => runner31.id, 'corp_faction_id' => corp_faction1.id, 'corp_identity_id' => corp1.id, 'league_id' => league1.id, 'points' => '0')
 player5.save
 
-player6 = Player.new('first_name' => 'Stewart', 'surname' => 'MacKenzie-leigh', 'tag' => 'W33gi3', 'runner_faction_id' => runner_faction3.id, 'runner_identity_id' => runner24.id, 'corp_faction_id' => corp_faction4.id, 'corp_identity_id' => corp40.id, 'league_id' => league1.id)
+player6 = Player.new('first_name' => 'Stewart', 'surname' => 'MacKenzie-leigh', 'tag' => 'W33gi3', 'runner_faction_id' => runner_faction3.id, 'runner_identity_id' => runner24.id, 'corp_faction_id' => corp_faction4.id, 'corp_identity_id' => corp40.id, 'league_id' => league1.id, 'points' => '0')
 player6.save
 
-player7 = Player.new('first_name' => 'Yan', 'surname' => 'Ren', 'tag' => 'RENd0d0', 'runner_faction_id' => runner_faction1.id, 'runner_identity_id' => runner5.id, 'corp_faction_id' => corp_faction3.id, 'corp_identity_id' => corp25.id, 'league_id' => league2.id)
+player7 = Player.new('first_name' => 'Yan', 'surname' => 'Ren', 'tag' => 'RENd0d0', 'runner_faction_id' => runner_faction1.id, 'runner_identity_id' => runner5.id, 'corp_faction_id' => corp_faction3.id, 'corp_identity_id' => corp25.id, 'league_id' => league2.id, 'points' => '0')
 player7.save
 
-player8 = Player.new('first_name' => 'Guy', 'surname' => 'Bach', 'tag' => 'RANT3R25', 'runner_faction_id' => runner_faction2.id, 'runner_identity_id' => runner28.id, 'corp_faction_id' => corp_faction2.id, 'corp_identity_id' => corp19.id, 'league_id' => league2.id)
+player8 = Player.new('first_name' => 'Guy', 'surname' => 'Bach', 'tag' => 'RANT3R25', 'runner_faction_id' => runner_faction2.id, 'runner_identity_id' => runner28.id, 'corp_faction_id' => corp_faction2.id, 'corp_identity_id' => corp19.id, 'league_id' => league2.id, 'points' => '0')
 player8.save
 
-player9 = Player.new('first_name' => 'Derek', 'surname' => 'Middlemiss', 'tag' => 'D3L-B0y', 'runner_faction_id' => runner_faction1.id, 'runner_identity_id' => runner4.id, 'corp_faction_id' => corp_faction1.id, 'corp_identity_id' => corp7.id, 'league_id' => league2.id)
+player9 = Player.new('first_name' => 'Derek', 'surname' => 'Middlemiss', 'tag' => 'D3L-B0y', 'runner_faction_id' => runner_faction1.id, 'runner_identity_id' => runner4.id, 'corp_faction_id' => corp_faction1.id, 'corp_identity_id' => corp7.id, 'league_id' => league2.id, 'points' => '0')
 player9.save
 
-player10 = Player.new('first_name' => 'Stacey', 'surname' => 'Napier', 'tag' => 'STAC3-30', 'runner_faction_id' => runner_faction3.id, 'runner_identity_id' => runner20.id, 'corp_faction_id' => corp_faction2.id, 'corp_identity_id' => corp22.id, 'league_id' => league2.id)
+player10 = Player.new('first_name' => 'Stacey', 'surname' => 'Napier', 'tag' => 'STAC3-30', 'runner_faction_id' => runner_faction3.id, 'runner_identity_id' => runner20.id, 'corp_faction_id' => corp_faction2.id, 'corp_identity_id' => corp22.id, 'league_id' => league2.id, 'points' => '0')
 player10.save
 
-player11 = Player.new('first_name' => 'Ben ', 'surname' => 'Ghirardani', 'tag' => 'GHAND1', 'runner_faction_id' => runner_faction2.id, 'runner_identity_id' => runner34.id, 'corp_faction_id' => corp_faction4.id, 'corp_identity_id' => corp33.id, 'league_id' => league2.id)
+player11 = Player.new('first_name' => 'Ben ', 'surname' => 'Ghirardani', 'tag' => 'GHAND1', 'runner_faction_id' => runner_faction2.id, 'runner_identity_id' => runner34.id, 'corp_faction_id' => corp_faction4.id, 'corp_identity_id' => corp33.id, 'league_id' => league2.id, 'points' => '0')
 player11.save
 
-player12 = Player.new('first_name' => 'Alan ', 'surname' => 'Mclarney', 'tag' => 'SP3cs', 'runner_faction_id' => runner_faction2.id, 'runner_identity_id' => runner30.id, 'corp_faction_id' => corp_faction3.id, 'corp_identity_id' => corp29.id, 'league_id' => league2.id)
+player12 = Player.new('first_name' => 'Alan ', 'surname' => 'Mclarney', 'tag' => 'SP3cs', 'runner_faction_id' => runner_faction2.id, 'runner_identity_id' => runner30.id, 'corp_faction_id' => corp_faction3.id, 'corp_identity_id' => corp29.id, 'league_id' => league2.id, 'points' => '0')
 player12.save
 
 # player13 = Player.new('first_name' => 'Matthew ', 'surname' => 'Shield', 'tag' => '2B0rN0t2b', 'runner_faction' => 'Anarch', 'runner_identity' => 'Null: Whistleblower', 'corp_faction' => 'NBN', 'corp_identity' => 'Spark Agency: Worldswide Reach', 'league_id' => Null)
 # player13.save
-
-
-
-p player1.find_runner_identity
 
 nil

@@ -10,6 +10,7 @@
   <p>Corp Faction: <%= player.find_corp_faction.name %></p>
   <p>Corp Identity: <%= player.find_corp_identity.name %></p>
   <p>League: <%= player.find_league.name%></p>
+  <p>Points: <%= player.points %></p>
   <form action="/players/<%=player.id%>/edit/" method = "GET">
     <input class ="btn--new" input type="submit" value="Edit Player">
   </form>

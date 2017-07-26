@@ -9,12 +9,14 @@ DROP TABLE if EXISTS corp_factions;
 
 CREATE TABLE runner_factions (
   id SERIAL4 PRIMARY KEY,
-  name VARCHAR(255)
+  name VARCHAR(255),
+  logo VARCHAR(255)
   );
 
 CREATE TABLE corp_factions (
   id SERIAL4 PRIMARY KEY,
-  name VARCHAR(255)
+  name VARCHAR(255),
+  logo VARCHAR(255)
   );
 
 CREATE TABLE runners (
@@ -46,7 +48,8 @@ CREATE TABLE players (
   runner_identity_id INT4 REFERENCES runners(id) ON DELETE CASCADE,
   corp_faction_id INT4 REFERENCES corp_factions(id) ON DELETE CASCADE,
   corp_identity_id INT4 REFERENCES corps(id) ON DELETE CASCADE,
-  league_id INT4 REFERENCES leagues(id) ON DELETE CASCADE
+  league_id INT4 REFERENCES leagues(id) ON DELETE CASCADE,
+  points INT4
   );
 
 CREATE TABLE games (

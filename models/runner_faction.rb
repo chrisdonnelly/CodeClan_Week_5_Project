@@ -8,16 +8,19 @@ require_relative('../db/sql_runner.rb')
     def initialize(options)
       @id = options['id'].to_i if options['id']
       @name = options['name']
+      @logo = options['logo']
     end
 
     def save()
       sql = "INSERT INTO runner_factions
       (
-      name
+      name,
+      logo
       )
       VALUES
       (
-      '#{@name}'
+      '#{@name}',
+      '#{@logo}'
       ) 
       RETURNING id;"
       result = SqlRunner.run(sql)[0]
