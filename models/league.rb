@@ -48,10 +48,10 @@ class League
 
   def players
     current_players = []  
-    sql = "SElECT players.tag FROM players INNER JOIN leagues ON players.league_id = leagues.id WHERE players.league_id = '#{@id}'"
+    sql = "SElECT players.tag, players.points FROM players INNER JOIN leagues ON players.league_id = leagues.id WHERE players.league_id = '#{@id}'"
     players = SqlRunner.run(sql)
     results = players.map {|player| Player.new(player)}
-    results.each {|player| current_players.push(player.tag)}
+    results.each {|player| current_players.push(player.tag, player.points)}
     return current_players
   end
 

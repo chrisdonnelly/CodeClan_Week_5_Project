@@ -42,7 +42,8 @@ value="<%= @player.tag %>"
 name="runner_faction_id" 
 id="runner-faction-field">
 <% @runner_factions.each do |runner_faction| %>
-<option value=<%=runner_faction.id%>><%=runner_faction.name%></option>
+<option 
+value=<%=runner_faction.id%>><%=runner_faction.name%></option>
 <%end%>
 </select>
   
