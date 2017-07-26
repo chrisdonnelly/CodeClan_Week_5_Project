@@ -20,11 +20,11 @@ get '/games/new' do
   erb(:"games/new")
 end
 
-# post '/players' do
-#   new_player = Player.new(params)
-#   new_player.save
-#   redirect to '/players'
-# end
+post '/games' do
+  new_game = Game.new(params)
+  new_game.save
+  redirect to '/games'
+end
 
 # get '/players/edit/:id' do
 #   @leagues = League.find_all

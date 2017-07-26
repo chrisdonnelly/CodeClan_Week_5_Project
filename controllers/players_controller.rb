@@ -21,10 +21,10 @@ end
 post '/players' do
   new_player = Player.new(params)
   new_player.save
-  redirect to '/players'
+  redirect to ('/players')
 end
 
-get '/players/edit/:id' do
+get '/players/:id/edit/' do
   @runners = Runner.find_all
   @corps = Corp.find_all
   @runner_factions = Runner_faction.find_all
@@ -34,7 +34,12 @@ get '/players/edit/:id' do
   erb(:"players/edit")
 end
 
-post '/players/update/:id' do
+post '/players/:id/update/' do
   Player.new(params).update
-  redirect to'/players'
+  redirect to ('/players')
+end
+
+post '/players/:id/delete/' do
+    Player.delete(:id)
+    redirect to ('/players')
 end

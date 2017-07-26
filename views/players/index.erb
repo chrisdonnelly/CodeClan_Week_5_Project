@@ -1,6 +1,7 @@
-<h2>Players</h2>
+<h1>Players</h1>
 <hr />
 <% @players.each do |player| %>
+<div id=players>
   <p>First Name: <%= player.first_name %></p>
   <p>Surname:  <%= player.surname %></p>
   <p>Tag:  <%= player.tag %></p>
@@ -8,6 +9,15 @@
   <p>Runner Identity: <%= player.find_runner_identity.name %></p>
   <p>Corp Faction: <%= player.find_corp_faction.name %></p>
   <p>Corp Identity: <%= player.find_corp_identity.name %></p>
-  <p>League ID : <%= player.league_id %></p>
-    <hr />
-    <% end %>
+  <p>League: <%= player.find_league.name%></p>
+  <form action="/players/<%=player.id%>/edit/" method = "GET">
+    <input class ="btn btn--new" input type="submit" value="Edit Player">
+  </form>
+  <form action="/players/<%=player.id%>/delete/" method = "POST">
+    <input class ="btn btn--del" input type="submit" value="Delete Player">
+  </form>
+  <br>
+  <br>
+<hr />
+<% end %>
+</div>

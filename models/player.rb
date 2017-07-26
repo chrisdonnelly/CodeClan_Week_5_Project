@@ -4,6 +4,7 @@ require_relative('./runner.rb')
 require_relative('./corp.rb')
 require_relative('./corp_faction.rb')
 require_relative('./runner_faction.rb')
+require_relative('./league.rb')
 
 class Player
 
@@ -88,6 +89,11 @@ def find_corp_identity
     return Corp.find(id)
 end
 
+def find_league
+    id = @league_id
+    return League.find(id)
+end
+
 def self.find(id)
     sql = "SELECT * FROM players WHERE id = #{id};"
     student = SqlRunner.run(sql)
@@ -103,7 +109,7 @@ def self.find_all
 end
 
 def self.delete(id)
-    sql = "DELETE * FROM players WHERE id=#{id};"
+    sql = "DELETE FROM players WHERE id = #{id}"
     SqlRunner.run(sql)
 end
 

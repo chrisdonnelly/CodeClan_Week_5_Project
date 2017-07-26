@@ -12,16 +12,20 @@ body {
   background: black url('./images/wallpaper_1920x1080_nbn.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
   color: papayawhip;
   font-family: 'Monkirta Pursuit NC', serif;
   padding: 0px;
   margin: 0px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
   font-family: 'Monkirta Pursuit NC', cursive;
   margin: 0px;
   padding: 0px;
+  font-size: xx-large;
 }
 
 nav {
@@ -30,11 +34,13 @@ nav {
   padding-right: 25px;
   padding-top: 80px;
   font-size: xx-large;
+  position: fixed;
 }
 
 nav ul li {
   margin-bottom: 15px;
   text-transform: uppercase;
+  text-shadow: 8px 8px 12px black;
 }
 
 ul {
@@ -72,13 +78,75 @@ header {
 }
 
 #content {
-  border-left: 1px solid darkred;
-  padding-left: 40px;
-  padding-top: 70px;
+  padding-left: 250px;
+  padding-top: 35px;
   text-decoration: none;
+  text-shadow: 8px 8px 12px black;
   color: white;
 }
 
 p.big {
     line-height: 1.8;
+    font-size: larger;
+    text-shadow: 8px 8px 12px black;
+  }
+
+p {
+  font-size: larger;
 }
+
+#players{
+}
+
+.btn {
+  border:0px none;
+  border-radius: 3%;
+  padding: 8px 12px;
+  color: papayawhip;
+  cursor:pointer;
+  font-family: 'Monkirta Pursuit NC', cursive;
+}
+
+.btn--jack_in {
+  background-color: white;
+  font-size: large;
+  color: black;
+}
+
+.btn--jack_in:hover {
+  background-color: blue;
+}
+
+.btn--new {
+  background-color: white;
+  font-size: large;
+  color: black;
+  border-radius: 12px;
+  float: left;
+  border: 1px solid green;
+}
+
+.btn--new:hover {
+  background-color: blue;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.btn--del {
+  background-color: white;
+  font-size: large;
+  color: black;
+  border-radius: 12px;
+  float: left;
+  border: 1px solid red;
+}
+
+.btn--del:hover {
+  background-color: blue;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+
+/*position: relative;
+right: -150px;
+bottom: 37px;*/

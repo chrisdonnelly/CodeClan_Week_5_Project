@@ -42,28 +42,28 @@ CREATE TABLE players (
   first_name VARCHAR(255),
   surname VARCHAR(255),
   tag VARCHAR(255),
-  runner_faction_id INT4 REFERENCES runner_factions(id),
-  runner_identity_id INT4 REFERENCES runners(id),
-  corp_faction_id INT4 REFERENCES corp_factions(id),
-  corp_identity_id INT4 REFERENCES corps(id),
-  league_id INT4 REFERENCES leagues(id)
+  runner_faction_id INT4 REFERENCES runner_factions(id) ON DELETE CASCADE,
+  runner_identity_id INT4 REFERENCES runners(id) ON DELETE CASCADE,
+  corp_faction_id INT4 REFERENCES corp_factions(id) ON DELETE CASCADE,
+  corp_identity_id INT4 REFERENCES corps(id) ON DELETE CASCADE,
+  league_id INT4 REFERENCES leagues(id) ON DELETE CASCADE
   );
 
 CREATE TABLE games (
   id SERIAL4 PRIMARY KEY,
-  league_id INT4 REFERENCES leagues(id),
-  round1_runner_player_id INT4 REFERENCES players(id),
-  round1_runner_faction_id INT4 REFERENCES runner_factions(id),
-  round1_runner_identity_id INT4 REFERENCES runners(id),
-  round1_corp_player_id INT4 REFERENCES players(id),
-  round1_corp_faction_id INT4 REFERENCES corp_factions(id),
-  round1_corp_identity_id INT4 REFERENCES corps(id),
-  round1_winner_id INT4 REFERENCES players(id),
-  round2_runner_player_id INT4 REFERENCES players(id),
-  round2_runner_faction_id INT4 REFERENCES runner_factions(id),
-  round2_runner_identity_id INT4 REFERENCES runners(id),
-  round2_corp_player_id INT4 REFERENCES players(id),
-  round2_corp_faction_id INT4 REFERENCES corp_factions(id),
-  round2_corp_identity_id INT4 REFERENCES corps(id),
-  round2_winner_id INT4 REFERENCES players(id)
+  league_id INT4 REFERENCES leagues(id) ON DELETE CASCADE,
+  round1_runner_player_id INT4 REFERENCES players(id) ON DELETE CASCADE,
+  round1_runner_faction_id INT4 REFERENCES runner_factions(id) ON DELETE CASCADE,
+  round1_runner_identity_id INT4 REFERENCES runners(id) ON DELETE CASCADE,
+  round1_corp_player_id INT4 REFERENCES players(id) ON DELETE CASCADE,
+  round1_corp_faction_id INT4 REFERENCES corp_factions(id) ON DELETE CASCADE,
+  round1_corp_identity_id INT4 REFERENCES corps(id) ON DELETE CASCADE,
+  round1_winner_id INT4 REFERENCES players(id) ON DELETE CASCADE,
+  round2_runner_player_id INT4 REFERENCES players(id) ON DELETE CASCADE,
+  round2_runner_faction_id INT4 REFERENCES runner_factions(id) ON DELETE CASCADE,
+  round2_runner_identity_id INT4 REFERENCES runners(id) ON DELETE CASCADE,
+  round2_corp_player_id INT4 REFERENCES players(id) ON DELETE CASCADE,
+  round2_corp_faction_id INT4 REFERENCES corp_factions(id) ON DELETE CASCADE,
+  round2_corp_identity_id INT4 REFERENCES corps(id) ON DELETE CASCADE,
+  round2_winner_id INT4 REFERENCES players(id) ON DELETE CASCADE
   );
