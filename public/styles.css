@@ -40,6 +40,7 @@ nav ul li {
   margin-bottom: 15px;
   text-transform: uppercase;
   text-shadow: 8px 8px 12px black;
+  -webkit-text-stroke: 1px black;
 }
 
 ul {
@@ -91,19 +92,24 @@ p {
 }
 
 .btn--jack_in {
-  cursor:pointer;
-  font-family: 'Monkirta Pursuit NC', cursive;
-  background-color: white;
-  font-size: large;
-  color: black;
-  border-radius: 12px;
-  padding: 8px 12px;
-  text-align: center;
-  cursor:pointer;
+ cursor:pointer;
+ font-family: 'Monkirta Pursuit NC', cursive;
+ background-color: white;
+ font-size: large;
+ -webkit-text-stroke: 1px black;
+ color: black;
+ border-radius: 12px;
+ width: 200px;
+ float: left;
+ border: 1px solid blue;
+ padding: 8px 12px;
+ text-align: center;
+ cursor:pointer;
 }
 
 .btn--jack_in:hover {
-  background-color: blue;
+  background-color: transparent;
+  color: white;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
@@ -112,34 +118,21 @@ p {
   font-family: 'Monkirta Pursuit NC', cursive;
   background-color: white;
   font-size: large;
+  -webkit-text-stroke: 1px black;
   color: black;
   border-radius: 12px;
+  width: 200px;
   float: left;
-  border: 1px solid red;
+  border: 1px solid blue;
   padding: 8px 12px;
   text-align: center;
   cursor:pointer;
 }
 
 .btn--new:hover {
-  background-color: blue;
+  background-color: transparent;
+  color: white;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
-};
-
-.btn--del {
-  background-color: white;
-  font-size: large;
-  color: black;
-  border-radius: 12px;
-  float: left;
-  border: 1px solid red;
-  text-align: center;
-  cursor:pointer;
-}
-
-.btn--del:hover {
-  background-color: blue;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .lander{
@@ -160,7 +153,7 @@ p {
   position: fixed;
   left: 350px;
   top:100px;
-  background-color: transparent; blue;
+  background-color: transparent;
   width: 50%;
   font-size: xx-large;
   text-shadow: 8px 8px 12px black;
@@ -174,12 +167,12 @@ p {
 }
 
 .btn--entry:hover {
-  background-color: blue;
+  background-color: transparent;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .btn--entry:active {
-  background-color: cyan;
+  background-color: dark gray;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }

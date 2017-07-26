@@ -154,15 +154,15 @@ id="round2-corp-identity-field">
 </p>
 
 <p class="big">
-<label for="round-1-runner-winner-field">Round 1 Winner:</label>
+<label for="round-2-winner-field">Round 2 Winner:</label>
 <select
 name="round2_winner_id" 
-id="round1-winner-id-field">
+id="round2-winner-id-field">
 <% @players.each do |player| %>
 <option value=<%=player.id%>><%=player.tag%></option>
 <%end%>
 </select>
 </p>
 
-<input type="submit" value="Save this Run">
+<input class ="btn--new" input type="submit" value="Save this Run">
 </form>
