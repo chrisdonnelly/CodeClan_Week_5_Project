@@ -1,6 +1,8 @@
 # Simple_Web_App_Using_Ruby_and_Sinatra
 
-This personal project involved creating a web app to display, receive and store user inputs in a database.  I was responsible for every stage of the development cycle.  
+This was my first project from my time at CodeClan, created after four weeks of coding experience.
+
+This project involved creating a web app to display, receive and store user inputs in a database.  I was responsible for every stage of the development cycle.  
  
 The design stages included requirements gathering, user journey maps, wireframes, MoSCoW analysis and project management via Trello. 
 
